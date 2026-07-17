@@ -1,0 +1,401 @@
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#d8d8d8;
+    overflow:hidden;
+}
+
+/* =========================
+   PARTICLES
+========================= */
+
+#particles{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    overflow:hidden;
+    z-index:1;
+}
+
+.snow{
+    position:absolute;
+    top:-20px;
+    border-radius:50%;
+    background:#fff;
+    animation:snow linear infinite;
+}
+
+@keyframes snow{
+
+    from{
+        transform:translateY(-20px);
+    }
+
+    to{
+        transform:translateY(110vh);
+    }
+
+}
+
+/* =========================
+   COVER
+========================= */
+
+.cover{
+
+    position:fixed;
+    inset:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:#d8d8d8;
+
+    transition:.8s;
+
+    z-index:100;
+}
+
+.cover.hide{
+
+    opacity:0;
+    visibility:hidden;
+}
+
+.circle{
+
+    position:absolute;
+
+    width:350px;
+    height:350px;
+
+    background:#222;
+
+    border-radius:50%;
+
+}
+
+.cover-content{
+
+    position:relative;
+
+    z-index:10;
+
+    text-align:center;
+
+    color:white;
+}
+
+.cover-content h3{
+
+    font-weight:300;
+
+    letter-spacing:5px;
+
+    margin-bottom:20px;
+}
+
+.cover-content h1{
+
+    font-size:52px;
+
+    margin-bottom:20px;
+}
+
+.cover-content p{
+
+    color:#ddd;
+
+    margin-bottom:30px;
+}
+
+#openBook{
+
+    padding:15px 45px;
+
+    border:none;
+
+    border-radius:40px;
+
+    background:white;
+
+    color:#222;
+
+    cursor:pointer;
+
+    font-size:17px;
+
+    transition:.3s;
+}
+
+#openBook:hover{
+
+    transform:scale(1.08);
+}
+
+/* =========================
+   BOOK
+========================= */
+
+.book{
+
+    display:none;
+
+    width:100%;
+    height:100vh;
+
+    justify-content:center;
+    align-items:center;
+}
+
+.book.active{
+
+    display:flex;
+}
+
+/* =========================
+   PAGE
+========================= */
+
+.page{
+
+    width:950px;
+    height:560px;
+
+    background:white;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    display:none;
+
+    box-shadow:0 25px 70px rgba(0,0,0,.25);
+
+    animation:fade .6s;
+}
+
+.page.show{
+
+    display:flex;
+}
+
+/* =========================
+   LEFT
+========================= */
+
+.left{
+
+    width:50%;
+
+    padding:60px;
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-direction:column;
+}
+
+.left h2{
+
+    font-size:38px;
+
+    color:#222;
+
+    margin-bottom:20px;
+}
+
+.left p{
+
+    font-size:18px;
+
+    line-height:1.9;
+
+    color:#555;
+}
+
+/* =========================
+   RIGHT
+========================= */
+
+.right{
+
+    width:50%;
+
+    background:#efefef;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+}
+
+.right img{
+
+    width:90%;
+    height:90%;
+
+    object-fit:cover;
+
+    border-radius:20px;
+
+    transition:.5s;
+}
+
+.right img:hover{
+
+    transform:scale(1.03);
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.navigation{
+
+    position:fixed;
+
+    bottom:35px;
+
+    display:flex;
+
+    gap:20px;
+}
+
+.navigation button{
+
+    width:65px;
+
+    height:65px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#222;
+
+    color:white;
+
+    font-size:24px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.navigation button:hover{
+
+    background:#555;
+
+    transform:scale(1.1);
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes fade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:900px){
+
+.page{
+
+    width:95%;
+
+    height:auto;
+
+    flex-direction:column;
+
+}
+
+.left{
+
+    width:100%;
+
+    padding:30px;
+
+}
+
+.left h2{
+
+    font-size:28px;
+
+}
+
+.left p{
+
+    font-size:16px;
+
+}
+
+.right{
+
+    width:100%;
+
+    height:300px;
+
+}
+
+.right img{
+
+    width:100%;
+
+    height:100%;
+
+}
+
+.cover-content h1{
+
+    font-size:36px;
+
+}
+
+.circle{
+
+    width:260px;
+
+    height:260px;
+
+}
+
+.navigation{
+
+    bottom:20px;
+
+}
+
+}
